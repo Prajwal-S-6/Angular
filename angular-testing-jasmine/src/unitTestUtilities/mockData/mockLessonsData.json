@@ -1,0 +1,100 @@
+{
+  "allLessons": [
+    {
+      "id": 1,
+      "description": "Angular Tutorial For Beginners - Build Your First App - Hello World Step By Step",
+      "duration": "4:17",
+      "seqNo": 1,
+      "courseId": 5
+    },
+    {
+      "id": 2,
+      "description": "Building Your First  Component - Component Composition",
+      "duration": "2:07",
+      "seqNo": 2,
+      "courseId": 5
+    }
+  ],
+
+  "testingLessons": [
+    {
+      "id": 40,
+      "description": "Angular Testing Course - Helicopter View",
+      "duration": "5:38",
+      "seqNo": 1,
+      "courseId": 12
+    },
+
+    {
+      "id": 41,
+      "description": "Setting Up the Development Environment",
+      "duration": "5:12",
+      "seqNo": 2,
+      "courseId": 12
+    },
+
+    {
+      "id": 42,
+      "description": "Introduction to Jasmine, Spies and specs",
+      "duration": "4:07",
+      "seqNo": 3,
+      "courseId": 12
+    },
+
+    {
+      "id": 43,
+      "description": "Introduction to Service Testing",
+      "duration": "7:32",
+      "seqNo": 4,
+      "courseId": 12
+    },
+
+    {
+      "id": 44,
+      "description": "Settting up the Angular TestBed",
+      "duration": "6:28",
+      "seqNo": 5,
+      "courseId": 12
+    },
+
+    {
+      "id": 45,
+      "description": "Mocking Angular HTTP requests",
+      "duration": "4:38",
+      "seqNo": 6,
+      "courseId": 12
+    },
+
+    {
+      "id": 46,
+      "description": "Simulating Failing HTTP Requests",
+      "duration": "7:54",
+      "seqNo": 7,
+      "courseId": 12
+    },
+
+    {
+      "id": 47,
+      "description": "Introduction to Angular Component Testing",
+      "duration": "5:31",
+      "seqNo": 8,
+      "courseId": 12
+    },
+
+    {
+      "id": 48,
+      "description": "Testing Angular Components without the DOM",
+      "duration": "8:19",
+      "seqNo": 9,
+      "courseId": 12
+    },
+
+    {
+      "id": 49,
+      "description": "Testing Angular Components with the DOM",
+      "duration": "7:05",
+      "seqNo": 10,
+      "courseId": 12
+    }
+  ]
+}

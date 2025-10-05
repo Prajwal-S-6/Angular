@@ -20,4 +20,3 @@ The purpose of this repo is to explore Angular features hands-on while building 
 * Try out **Jest** as an alternative test runner
 * Add performance testing for critical Angular components
 
----

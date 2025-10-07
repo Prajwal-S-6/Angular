@@ -1,3 +1,4 @@
+/// <reference types="jasmine" />
 import {ComponentFixture, fakeAsync, TestBed, tick, waitForAsync} from "@angular/core/testing";
 import {CoursesModule} from "../courses.module";
 import {CoursesService} from "../services/courses.service";

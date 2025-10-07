@@ -15,7 +15,11 @@ describe('Course Card Component', () => {
       })
   })
 
-  it('should display courses list', () => {
-    cy.get('.course-card').should('have.length', 3)
+  it('should display list of courses', () => {
+    cy.get('[data-cy=course-card]').should('have.length', 3)
+  });
+
+  it('should open edit course dialog on click edit', () => {
+    cy.get('[data-cy=edit-course]').first()
   });
 });

@@ -55,6 +55,12 @@ describe('Course Card Component', () => {
     })
   });
 
+  it('should contain image with correct source', () => {
+    cy.get('[data-cy=course-card]').first().within(() => {
+      cy.get('[data-cy=course-card-img]').should('have.attr', 'src', 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-testing-small.png')
+    })
+  });
+
   it('should contain course with two buttons with correct name', () => {
     cy.get('[data-cy=course-card]').first().within(() => {
       cy.get('button').should('have.length', 2);

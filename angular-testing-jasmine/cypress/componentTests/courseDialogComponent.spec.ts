@@ -35,4 +35,12 @@ describe('CourseDialog Component', () => {
     cy.get('[data-cy=releaseDate]').should('have.value', '10/8/2025')
     cy.get('[data-cy=longDescription]').should('have.value', 'In-depth guide to Unit Testing and E2E Testing of Angular Applications')
   });
+
+  it('should contain two buttons with Close and Save respectively', () => {
+    cy.get('mat-dialog-actions').within(() => {
+      cy.get('button').should('have.length', 2);
+      cy.get('button').first().should('contain.text', 'Close')
+      cy.get('button').last().should('contain.text', 'Save')
+    })
+  });
 });

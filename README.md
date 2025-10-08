@@ -8,7 +8,7 @@ The purpose of this repo is to explore Angular features hands-on while building 
 
 * Practice **Angular concepts** (components, services, RxJS, routing)
 * Learn and apply **Angular unit testing best practices**
-* Explore **Cypress E2E testing** for UI validation and API interaction
+* Explore **Cypress Component & E2E testing** for UI validation and API interaction
 * Build confidence in writing maintainable, testable Angular code
 
 ---

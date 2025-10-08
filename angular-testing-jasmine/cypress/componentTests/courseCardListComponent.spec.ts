@@ -61,6 +61,12 @@ describe('Course Card Component', () => {
     })
   });
 
+  it('should contain course long description has content', () => {
+    cy.get('[data-cy=course-card]').first().within(() => {
+      cy.get('mat-card-content').should('have.text', 'In-depth guide to Unit Testing and E2E Testing of Angular Applications')
+    })
+  });
+
   it('should contain course with two buttons with correct name', () => {
     cy.get('[data-cy=course-card]').first().within(() => {
       cy.get('button').should('have.length', 2);

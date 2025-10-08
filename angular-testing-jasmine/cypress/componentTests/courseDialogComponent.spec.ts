@@ -5,13 +5,16 @@ import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from "@angular/material/
 import * as mockCourseData from "../../src/unitTestUtilities/mockData/mockCoursesData.json"
 import {CoursesService} from "../../src/app/courses/services/courses.service";
 import {ReactiveFormsModule} from "@angular/forms";
+import {Course} from "../../src/app/courses/model/course";
+import { of } from "rxjs";
 
 class CourseServiceStub {
-
+  saveCourse(courseId:number, changes: Partial<Course>) {
+    return of(true)
+  }
 }
 describe('CourseDialog Component', () => {
   const courses = Object.assign(mockCourseData);
-
   beforeEach(() => {
     mount(CourseDialogComponent, {
       imports: [CoursesModule, ReactiveFormsModule],
@@ -20,6 +23,9 @@ describe('CourseDialog Component', () => {
         {provide: CoursesService, useClass: CourseServiceStub},
         {provide: MatDialogRef, useValue: {close: cy.spy()}}
       ]
+    }).then((response) => {
+      cy.spy(response.component, 'close').as('closeEvent');
+      cy.spy(response.component, 'save').as('saveEvent');
     })
   })
 
@@ -42,5 +48,15 @@ describe('CourseDialog Component', () => {
       cy.get('button').first().should('contain.text', 'Close')
       cy.get('button').last().should('contain.text', 'Save')
     })
+  });
+
+  it('should call component close when clicked on close button', () => {
+    cy.get('[data-cy=close]').click();
+    cy.get('@closeEvent').should('have.been.called', 1)
+  });
+
+  it('should call component save when clicked on save button', () => {
+    cy.get('[data-cy=save]').click();
+    cy.get('@saveEvent').should('have.been.called', 1)
   });
 });

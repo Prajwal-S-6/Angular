@@ -29,5 +29,10 @@ describe('CourseDialog Component', () => {
 
   it('should fill in fields with course data', () => {
     cy.get('[data-cy=description]').should('have.value', 'Angular Testing Course')
+    cy.get('[data-cy=category]').within(() => {
+      cy.get('.mat-mdc-select-min-line').should('have.text','Beginner')
+    })
+    cy.get('[data-cy=releaseDate]').should('have.value', '10/8/2025')
+    cy.get('[data-cy=longDescription]').should('have.value', 'In-depth guide to Unit Testing and E2E Testing of Angular Applications')
   });
 });

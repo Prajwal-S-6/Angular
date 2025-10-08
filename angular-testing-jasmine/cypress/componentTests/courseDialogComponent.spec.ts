@@ -1,7 +1,7 @@
 import {mount} from "cypress/angular";
 import {CourseDialogComponent} from "../../src/app/courses/course-dialog/course-dialog.component";
 import {CoursesModule} from "../../src/app/courses/courses.module";
-import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import * as mockCourseData from "../../src/unitTestUtilities/mockData/mockCoursesData.json"
 import {CoursesService} from "../../src/app/courses/services/courses.service";
 import {ReactiveFormsModule} from "@angular/forms";

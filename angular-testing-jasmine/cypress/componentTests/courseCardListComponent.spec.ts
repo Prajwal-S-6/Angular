@@ -55,7 +55,13 @@ describe('Course Card Component', () => {
     })
   });
 
-  
+  it('should contain course with two buttons with correct name', () => {
+    cy.get('[data-cy=course-card]').first().within(() => {
+      cy.get('button').should('have.length', 2);
+      cy.get('button').first().contains('VIEW COURSE')
+      cy.get('button').last().contains('EDIT')
+    })
+  });
 
   it('should open edit course dialog on click edit', () => {
     cy.get('[data-cy=edit-course]').first().click()

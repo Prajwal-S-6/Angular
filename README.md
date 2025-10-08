@@ -1,6 +1,6 @@
 # Angular Practice and Testing Repository
 
-This repository contains my practice code for **Angular development**, along with a focus on **testing strategies** using both **unit tests**, **component tests** **end-to-end (E2E) tests with Cypress**.
+This repository contains my practice code for **Angular development**, along with a focus on **testing strategies** using both **unit tests**, **component tests**, **end-to-end (E2E) tests with Cypress**.
 The purpose of this repo is to explore Angular features hands-on while building strong habits around testing and code quality.
 
 ---

@@ -21,7 +21,7 @@ describe('CourseDialog Component', () => {
       providers: [
         {provide: MAT_DIALOG_DATA, useValue: courses.allCourses[0]},
         {provide: CoursesService, useClass: CourseServiceStub},
-        {provide: MatDialogRef, useValue: {close: cy.spy()}}
+        {provide: MatDialogRef, useValue: {close: cy.spy().as('matDialogClose')}}
       ]
     }).then((response) => {
       cy.spy(response.component, 'close').as('closeEvent');
@@ -58,5 +58,13 @@ describe('CourseDialog Component', () => {
   it('should call component save when clicked on save button', () => {
     cy.get('[data-cy=save]').click();
     cy.get('@saveEvent').should('have.been.called', 1)
+  });
+
+  it('should call dialogRef close when course is saved or on click close button', () => {
+    cy.get('[data-cy=save]').click();
+    cy.get('@matDialogClose').should('have.been.called', 1)
+
+    cy.get('[data-cy=close]').click();
+    cy.get('@matDialogClose').should('have.been.called', 1)
   });
 });

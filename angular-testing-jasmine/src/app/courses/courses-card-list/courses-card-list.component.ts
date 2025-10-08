@@ -35,6 +35,7 @@ export class CoursesCardListComponent {
     const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig);
 
 
+    //courseEdited event was it emitted is checked as part of unit test(not component test)
     dialogRef.afterClosed()
       .pipe(
         filter(val => !!val),

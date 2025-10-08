@@ -15,10 +15,12 @@
 
     <mat-card-actions class="course-actions">
 
-      <button mat-raised-button color="primary" [routerLink]="['/courses', course.id]">
+      <!--      routing to be covered in E2E test-->
+      <button data-cy="view-course-lessons" mat-raised-button color="primary" [routerLink]="['/courses', course.id]">
         VIEW COURSE
       </button>
 
+      <!--      component tested dialog open scenario-->
       <button data-cy="edit-course" mat-raised-button color="accent"
               (click)="editCourse(course)">
         EDIT

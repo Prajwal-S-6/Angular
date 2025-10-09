@@ -1,11 +1,11 @@
 import {mount} from "cypress/angular";
-import * as mockCoursesData from '../../../../src/unitTestUtilities/mockData/mockCoursesData.json'
 import {Component, Input} from "@angular/core";
 import {RouterLink, RouterModule, RouterOutlet, Routes} from "@angular/router";
 import {Course} from "../model/course";
-import {CoursesCardListComponent} from "../courses-card-list/courses-card-list.component";
+import {CoursesCardListComponent} from "./courses-card-list.component";
 import {CoursesModule} from "../courses.module";
 import {CoursesService} from "../services/courses.service";
+import * as mockCoursesData from '../../../testUtilities/mockData/mockCoursesData.json'
 
 
 @Component({

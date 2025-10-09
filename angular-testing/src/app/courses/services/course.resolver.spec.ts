@@ -1,10 +1,7 @@
 import {TestBed, waitForAsync} from "@angular/core/testing";
 import {CoursesService} from "./courses.service";
-import {Course} from "../model/course";
-import {of} from "rxjs";
-import {CoursesModule} from "../courses.module";
 import {courseResolver} from "./course.resolver";
-import {ActivatedRoute, ActivatedRouteSnapshot, RouterStateSnapshot} from "@angular/router";
+import { ActivatedRouteSnapshot, RouterStateSnapshot} from "@angular/router";
 import {provideHttpClient} from "@angular/common/http";
 import {provideHttpClientTesting} from "@angular/common/http/testing";
 

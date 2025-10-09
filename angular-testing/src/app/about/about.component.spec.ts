@@ -1,4 +1,4 @@
-import {ComponentFixture, TestBed, waitForAsync} from "@angular/core/testing";
+import {waitForAsync} from "@angular/core/testing";
 import {AboutComponent} from "./about.component";
 
 let component: AboutComponent;

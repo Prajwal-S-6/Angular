@@ -1,5 +1,5 @@
-import {fakeAsync, flush, flushMicrotasks, tick, waitForAsync} from "@angular/core/testing";
-import {map, of } from "rxjs";
+import {fakeAsync, flush, flushMicrotasks, tick} from "@angular/core/testing";
+import {of } from "rxjs";
 import {delay} from "rxjs/operators";
 
 describe('Async example test', () => {
@@ -36,7 +36,7 @@ describe('Async example test', () => {
       console.log('Evaluating promise');
 
     })
-    of(true).subscribe((res) => {
+    of(true).subscribe(() => {
       console.log('Evaluating observable');
       value = true;
     })
@@ -56,7 +56,7 @@ describe('Async example test', () => {
       console.log('Evaluating promise');
       value = true;
     })
-    of(true).subscribe((res) => {
+    of(true).subscribe(() => {
       console.log('Evaluating observable');
     })
     flushMicrotasks();
@@ -76,7 +76,7 @@ describe('Async example test', () => {
     Promise.resolve().then(() => {
       console.log('Evaluating promise');
     })
-    of(true).subscribe((res) => {
+    of(true).subscribe(() => {
       console.log('Evaluating observable');
     })
     flush();

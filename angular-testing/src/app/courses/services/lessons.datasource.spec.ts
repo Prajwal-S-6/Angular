@@ -1,7 +1,7 @@
 import {of, throwError} from "rxjs";
 import {CoursesService} from "./courses.service";
 import {LessonsDataSource} from "./lessons.datasource";
-import * as mockLessonsData from './../../../unitTestUtilities/mockData/mockLessonsData.json';
+import * as mockLessonsData from './../../../testUtilities/mockData/mockLessonsData.json';
 import {CollectionViewer} from "@angular/cdk/collections";
 import {fakeAsync, tick} from "@angular/core/testing";
 

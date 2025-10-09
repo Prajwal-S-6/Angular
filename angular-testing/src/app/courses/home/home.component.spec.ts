@@ -1,11 +1,11 @@
-import {ComponentFixture, fakeAsync, flush, TestBed, waitForAsync} from "@angular/core/testing";
+import {ComponentFixture, fakeAsync, TestBed, waitForAsync} from "@angular/core/testing";
 import {CoursesService} from "../services/courses.service";
 import {HomeComponent} from "./home.component";
 import { of } from "rxjs";
 import {CoursesModule} from "../courses.module";
 import {provideHttpClient} from "@angular/common/http";
 import {provideHttpClientTesting} from "@angular/common/http/testing";
-import * as mockCourseData from "../../../unitTestUtilities/mockData/mockCoursesData.json"
+import * as mockCourseData from "../../../testUtilities/mockData/mockCoursesData.json"
 
 
 let component: HomeComponent;

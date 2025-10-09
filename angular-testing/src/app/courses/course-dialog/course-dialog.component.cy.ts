@@ -1,7 +1,7 @@
 import {mount} from "cypress/angular";
 
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import * as mockCourseData from "../../../../src/unitTestUtilities/mockData/mockCoursesData.json"
+import * as mockCourseData from "../../../../src/testUtilities/mockData/mockCoursesData.json"
 import {ReactiveFormsModule} from "@angular/forms";
 import { of } from "rxjs";
 import {Course} from "../model/course";
@@ -9,7 +9,6 @@ import {CourseDialogComponent} from "./course-dialog.component";
 import {CoursesModule} from "../courses.module";
 import {CoursesService} from "../services/courses.service";
 import * as mockdate from "mockdate";
-import moment from "moment";
 
 class CourseServiceStub {
   saveCourse(courseId:number, changes: Partial<Course>) {

@@ -2,7 +2,7 @@ import {TestBed} from "@angular/core/testing";
 import {HttpTestingController, provideHttpClientTesting} from "@angular/common/http/testing";
 import {CoursesService} from "./courses.service";
 import {provideHttpClient} from "@angular/common/http";
-import {COURSES, findCourseById, findLessonsForCourse} from "../../../../server/db-data";
+import {COURSES} from "../../../../server/db-data";
 import {Course} from "../model/course";
 
 let service: CoursesService;

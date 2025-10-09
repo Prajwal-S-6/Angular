@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { Component } from '@angular/core';
-import { AppComponent } from '../../src/app/app.component';
+import { AppComponent } from './app.component';
 
 @Component({ template: '<p>Home Works!</p>', standalone: false })
 class HomeStubComponent {}

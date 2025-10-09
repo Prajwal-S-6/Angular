@@ -1,5 +1,5 @@
 import {mount} from "cypress/angular";
-import * as mockCoursesData from '../../../../src/unitTestUtilities/mockData/mockCoursesData.json'
+import * as mockCoursesData from '../../../../src/testUtilities/mockData/mockCoursesData.json'
 import {of} from "rxjs";
 import {HomeComponent} from "./home.component";
 import {CoursesModule} from "../courses.module";

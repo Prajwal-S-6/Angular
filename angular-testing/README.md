@@ -43,6 +43,11 @@ After running with coverage, open the generated report:
 coverage/<project-name>/index.html
 ```
 
+Open cypress studio using:
+```bash
+npm run cypress:open
+```
+
 ---
 
 ## 📂 Coverage

@@ -42,7 +42,22 @@ describe('Course Component', () => {
     cy.get('[data-cy="course-img"]').should('have.attr', 'src', 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-testing-small.png')
   });
 
-  it('should contain lessons search box and should filter lessons', () => {
-    cy.get('[data-cy="search-lesson"]').type('Testing')
+  it('should contain lessons search box', () => {
+    cy.get('[data-cy="search-lesson"]').should('be.visible')
+  });
+
+  it('should contain table with lessons with 3 header columns with proper name', () => {
+    cy.get('[data-cy="lessons-table"]').should('have.attr', 'matSort')
+    cy.get('[data-cy="lessons-table"]').should('have.attr', 'matSortActive', 'seqNo')
+    cy.get('[data-cy="lessons-table"]').should('have.attr', 'matSortDirection', 'asc')
+    cy.get('[data-cy="lessons-table"]').should('have.attr', 'matSortDisableClear', 'asc')
+    cy.get('[data-cy="lessons-table"]').within(() => {
+      cy.get('mat-header-cell').should('have.length', 3)
+      cy.get('mat-header-cell').eq(0).should('have.text', '#')
+      cy.get('mat-header-cell').eq(0).should('have.class', 'mat-sort-header')
+      cy.get('mat-header-cell').eq(1).should('have.text', 'Description')
+      cy.get('mat-header-cell').eq(2).should('have.text', 'Duration')
+      cy.get('mat-row').should('have.length', 2);
+    })
   });
 });

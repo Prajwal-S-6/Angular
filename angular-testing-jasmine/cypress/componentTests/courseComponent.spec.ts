@@ -77,6 +77,12 @@ describe('Course Component', () => {
     })
   });
 
+  it('should display correct page size options', () => {
+    // mat-mdc-option mdc-list-item
+    cy.get('.mat-mdc-paginator-touch-target').click()
+    cy.get('.mat-mdc-option').should('have.length', 3)
 
+
+  });
 
 });

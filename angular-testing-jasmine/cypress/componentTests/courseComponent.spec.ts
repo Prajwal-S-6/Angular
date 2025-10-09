@@ -14,9 +14,9 @@ class CourseServiceStub {
     courseId:number, filter = '', sortOrder = 'asc',
     pageNumber = 0, pageSize = 3):  Observable<Lesson[]> {
     if(filter !== '') {
-      return of([this.mockLessons.allLessons[0]])
+      return of([this.mockLessons.testingLessons[0]])
     }
-    return of(this.mockLessons.allLessons)
+    return of(this.mockLessons.testingLessons)
   }
 }
 
@@ -28,7 +28,6 @@ const route = {
   }
 } as unknown as ActivatedRoute;
 describe('Course Component', () => {
-  const mockLessons = Object.assign(mockLessonData);
   beforeEach(() => {
     mount(CourseComponent, {
       imports: [CoursesModule],
@@ -57,20 +56,27 @@ describe('Course Component', () => {
       cy.get('mat-header-cell').eq(0).should('have.class', 'mat-sort-header')
       cy.get('mat-header-cell').eq(1).should('have.text', 'Description')
       cy.get('mat-header-cell').eq(2).should('have.text', 'Duration')
-      cy.get('mat-row').should('have.length', 2);
     })
   });
 
   it('should contain table with correct number of lessons', () => {
     cy.get('[data-cy="lessons-table"]').within(() => {
-      cy.get('mat-row').should('have.length', 2);
+      cy.get('mat-row').should('have.length', 10);
       cy.get('mat-row').first().within(() => {
         cy.get('mat-cell').eq(0).should('have.text', 1)
-        cy.get('mat-cell').eq(1).should('have.text', 'Angular Tutorial For Beginners - Build Your First App - Hello World Step By Step')
-        cy.get('mat-cell').eq(2).should('have.text', '4:17')
+        cy.get('mat-cell').eq(1).should('have.text', 'Angular Testing Course - Helicopter View')
+        cy.get('mat-cell').eq(2).should('have.text', '5:38')
       })
     })
   });
+
+
+  it('should display 3 lessons per page of total lessons count', () => {
+    cy.get('mat-paginator').within(() => {
+      cy.get('.mat-mdc-paginator-range-label').should('contain.text', ' 1 – 3 of 10 ')
+    })
+  });
+
 
 
 });

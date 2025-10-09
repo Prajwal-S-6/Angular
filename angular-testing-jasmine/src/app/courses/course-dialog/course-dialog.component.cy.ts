@@ -8,6 +8,8 @@ import {Course} from "../model/course";
 import {CourseDialogComponent} from "./course-dialog.component";
 import {CoursesModule} from "../courses.module";
 import {CoursesService} from "../services/courses.service";
+import * as mockdate from "mockdate";
+import moment from "moment";
 
 class CourseServiceStub {
   saveCourse(courseId:number, changes: Partial<Course>) {
@@ -17,6 +19,7 @@ class CourseServiceStub {
 describe('CourseDialog Component', () => {
   const courses = Object.assign(mockCourseData);
   beforeEach(() => {
+    mockdate.set('2025-10-06T00:00:00Z')
     mount(CourseDialogComponent, {
       imports: [CoursesModule, ReactiveFormsModule],
       providers: [
@@ -34,12 +37,12 @@ describe('CourseDialog Component', () => {
     cy.get('h2').contains('Angular Testing Course')
   });
 
-  it('should fill in fields with course data', () => {
+  it('should populate fields with course data', () => {
     cy.get('[data-cy=description]').should('have.value', 'Angular Testing Course')
     cy.get('[data-cy=category]').within(() => {
       cy.get('.mat-mdc-select-min-line').should('have.text','Beginner')
     })
-    cy.get('[data-cy=releaseDate]').should('have.value', '10/8/2025')
+    cy.get('[data-cy=releaseDate]').should('have.value', '10/6/2025')
     cy.get('[data-cy=longDescription]').should('have.value', 'In-depth guide to Unit Testing and E2E Testing of Angular Applications')
   });
 

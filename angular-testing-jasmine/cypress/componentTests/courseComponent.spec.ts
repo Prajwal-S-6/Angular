@@ -34,7 +34,8 @@ describe('Course Component', () => {
     })
   })
 
-  it('should display course description as header', () => {
-    cy.get('h2')
+  it('should contain course description as header and course image', () => {
+    cy.get('[data-cy="course-title"]').contains('Angular Testing Course')
+    cy.get('[data-cy="course-img"]').should('have.attr', 'src', 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-testing-small.png')
   });
 });

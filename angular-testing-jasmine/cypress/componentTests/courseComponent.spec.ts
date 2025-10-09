@@ -13,6 +13,9 @@ class CourseServiceStub {
   findLessons(
     courseId:number, filter = '', sortOrder = 'asc',
     pageNumber = 0, pageSize = 3):  Observable<Lesson[]> {
+    if(filter !== '') {
+      return of([this.mockLessons.allLessons[0]])
+    }
     return of(this.mockLessons.allLessons)
   }
 }
@@ -37,5 +40,9 @@ describe('Course Component', () => {
   it('should contain course description as header and course image', () => {
     cy.get('[data-cy="course-title"]').contains('Angular Testing Course')
     cy.get('[data-cy="course-img"]').should('have.attr', 'src', 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-testing-small.png')
+  });
+
+  it('should contain lessons search box and should filter lessons', () => {
+    cy.get('[data-cy="search-lesson"]').type('Testing')
   });
 });

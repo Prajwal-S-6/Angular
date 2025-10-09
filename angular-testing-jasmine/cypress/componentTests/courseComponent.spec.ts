@@ -81,7 +81,8 @@ describe('Course Component', () => {
     // mat-mdc-option mdc-list-item
     cy.get('.mat-mdc-paginator-touch-target').click()
     cy.get('.mat-mdc-option').should('have.length', 3)
-
+    cy.get('.mat-mdc-option').first().should('have.class', 'mat-mdc-option-active')
+    cy.get('.mat-mdc-option').first().contains('3')
 
   });
 

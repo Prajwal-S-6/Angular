@@ -50,7 +50,7 @@ describe('Course Component', () => {
     cy.get('[data-cy="lessons-table"]').should('have.attr', 'matSort')
     cy.get('[data-cy="lessons-table"]').should('have.attr', 'matSortActive', 'seqNo')
     cy.get('[data-cy="lessons-table"]').should('have.attr', 'matSortDirection', 'asc')
-    cy.get('[data-cy="lessons-table"]').should('have.attr', 'matSortDisableClear', 'asc')
+    cy.get('[data-cy="lessons-table"]').should('have.attr', 'matSortDisableClear')
     cy.get('[data-cy="lessons-table"]').within(() => {
       cy.get('mat-header-cell').should('have.length', 3)
       cy.get('mat-header-cell').eq(0).should('have.text', '#')
@@ -60,4 +60,17 @@ describe('Course Component', () => {
       cy.get('mat-row').should('have.length', 2);
     })
   });
+
+  it('should contain table with correct number of lessons', () => {
+    cy.get('[data-cy="lessons-table"]').within(() => {
+      cy.get('mat-row').should('have.length', 2);
+      cy.get('mat-row').first().within(() => {
+        cy.get('mat-cell').eq(0).should('have.text', 1)
+        cy.get('mat-cell').eq(1).should('have.text', 'Angular Tutorial For Beginners - Build Your First App - Hello World Step By Step')
+        cy.get('mat-cell').eq(2).should('have.text', '4:17')
+      })
+    })
+  });
+
+
 });

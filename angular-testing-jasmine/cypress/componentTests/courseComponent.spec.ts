@@ -78,8 +78,8 @@ describe('Course Component', () => {
   });
 
   it('should display correct page size options', () => {
-    // mat-mdc-option mdc-list-item
-    cy.get('.mat-mdc-paginator-touch-target').click()
+    //cy.get('.mat-mdc-paginator-touch-target').click()
+    cy.get('.mat-mdc-select').click({force: true})
     cy.get('.mat-mdc-option').should('have.length', 3)
     cy.get('.mat-mdc-option').eq(0).should('have.class', 'mat-mdc-option-active')
     cy.get('.mat-mdc-option').eq(0).contains('3')

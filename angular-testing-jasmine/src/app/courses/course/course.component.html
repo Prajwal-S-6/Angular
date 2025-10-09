@@ -1,12 +1,12 @@
 <div class="course">
 
-    <h2>{{course?.titles?.description}}</h2>
+    <h2 data-cy="course-title">{{course?.titles?.description}}</h2>
 
-    <img class="course-thumbnail" [src]="course?.iconUrl">
+    <img data-cy="course-img" class="course-thumbnail" [src]="course?.iconUrl">
 
     <mat-form-field>
 
-        <input matInput placeholder="Search lessons" #input>
+        <input data-cy="search-lesson" matInput placeholder="Search lessons" #input>
 
     </mat-form-field>
 
@@ -18,7 +18,7 @@
 
     <div class="mat-elevation-z8">
 
-      <mat-table class="lessons-table" [dataSource]="dataSource"
+      <mat-table data-cy="lessons-table" class="lessons-table" [dataSource]="dataSource"
                  matSort matSortActive="seqNo" matSortDirection="asc" matSortDisableClear>
 
         <ng-container matColumnDef="seqNo">
